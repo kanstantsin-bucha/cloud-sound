@@ -1,12 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let manager: CloudManager
-    @State var urls = [URL]()
+    @ObservedObject var container: CloudContainer
+    private let manager: CloudManager
+    
+    public init(manager: CloudManager) {
+        self.manager = manager
+        container = manager.container
+    }
     
     var body: some View {
         NavigationView {
-            List(urls, id: \.self) { url in
+            let container = manager.container
+            List(container.fileUrls, id: \.self) { url in
                 NavigationLink(url.lastPathComponent) {
                     Text(url.lastPathComponent)
                     Button("Play") {
@@ -19,9 +25,6 @@ struct ContentView: View {
                     .padding()
                 }
             }
-        }
-        .task {
-            urls = manager.listAllFiles()
         }
     }
 }

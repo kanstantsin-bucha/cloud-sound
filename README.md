@@ -5,7 +5,10 @@ Vision: Player allows User to play files from iCloud Container folder
 ## TODO:
 
 - [x] Create iCloud Container (Ubiquitous Directory)
-- [ ] User see a list of files 
+- [x] User see a list of files 
+- [x] Player downloads files from iCloud
+- [ ] User can pull-to-refresh a list of files 
+
 - [ ] User selects a file
 - [ ] User plays the file
 - [ ] User pause playing

@@ -12,6 +12,7 @@
 		FE486A3729C59B710026A4D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE486A3629C59B710026A4D6 /* Preview Assets.xcassets */; };
 		FE486A3E29C5A2460026A4D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE486A3D29C5A2460026A4D6 /* ContentView.swift */; };
 		FE9AEF2429C5BB750009ABA1 /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */; };
+		FE9AEF3229C8DB0B0009ABA1 /* CloudContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FE486A3D29C5A2460026A4D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
 		FE9AEF2529C5BEE30009ABA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				FE486A3529C59B710026A4D6 /* Preview Content */,
 				FE486A3D29C5A2460026A4D6 /* ContentView.swift */,
 				FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */,
+				FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */,
 			);
 			path = CloudSoundPlayer;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9AEF3229C8DB0B0009ABA1 /* CloudContainer.swift in Sources */,
 				FE9AEF2429C5BB750009ABA1 /* CloudManager.swift in Sources */,
 				FE486A3E29C5A2460026A4D6 /* ContentView.swift in Sources */,
 				FE486A2C29C59B6F0026A4D6 /* CloudSoundPlayerApp.swift in Sources */,
