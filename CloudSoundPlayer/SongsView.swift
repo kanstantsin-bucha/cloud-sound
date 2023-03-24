@@ -12,20 +12,27 @@ struct SongsView: View {
     
     var body: some View {
         NavigationView {
-            let container = manager.container
-            List(container.fileUrls, id: \.self) { url in
-                NavigationLink(url.lastPathComponent) {
+            VStack {
+                Spacer()
+                Spacer()
+                List(cloud.fileUrls, id: \.self, selection: $selected) { url in
                     Text(url.lastPathComponent)
-                    Button("Play") {
-                        manager.play(url)
-                    }
-                    .padding()
-                    Button("Pause") {
-                        manager.pause()
-                    }
-                    .padding()
+                }
+                .onChange(of: selected) { newValue in
+                    play()
+                }
+                HStack {
+                    Button { play() } label: { Image(systemName: "play").font(.system(size: 40)) }
+                        .padding()
+                    Button { player.pause() } label: { Image(systemName: "pause").font(.system(size: 40)) }
+                        .padding()
                 }
             }
         }
+    }
+    
+    private func play() {
+        guard let fileToPlay = selected ?? cloud.fileUrls.first else { return }
+        player.play(fileToPlay)
     }
 }
