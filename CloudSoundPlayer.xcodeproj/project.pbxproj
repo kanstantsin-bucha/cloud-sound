@@ -10,7 +10,8 @@
 		FE486A2C29C59B6F0026A4D6 /* CloudSoundPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE486A2B29C59B6F0026A4D6 /* CloudSoundPlayerApp.swift */; };
 		FE486A3229C59B710026A4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE486A3129C59B710026A4D6 /* Assets.xcassets */; };
 		FE486A3729C59B710026A4D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE486A3629C59B710026A4D6 /* Preview Assets.xcassets */; };
-		FE486A3E29C5A2460026A4D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE486A3D29C5A2460026A4D6 /* ContentView.swift */; };
+		FE486A3E29C5A2460026A4D6 /* SongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE486A3D29C5A2460026A4D6 /* SongsView.swift */; };
+		FE52958A29CD8710009E58B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE52958929CD8710009E58B8 /* Player.swift */; };
 		FE9AEF2429C5BB750009ABA1 /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */; };
 		FE9AEF3229C8DB0B0009ABA1 /* CloudContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */; };
 /* End PBXBuildFile section */
@@ -22,7 +23,8 @@
 		FE486A3329C59B710026A4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE486A3429C59B710026A4D6 /* CloudSoundPlayer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudSoundPlayer.entitlements; sourceTree = "<group>"; };
 		FE486A3629C59B710026A4D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FE486A3D29C5A2460026A4D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FE486A3D29C5A2460026A4D6 /* SongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsView.swift; sourceTree = "<group>"; };
+		FE52958929CD8710009E58B8 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
 		FE9AEF2529C5BEE30009ABA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudContainer.swift; sourceTree = "<group>"; };
@@ -64,9 +66,10 @@
 				FE486A3329C59B710026A4D6 /* Info.plist */,
 				FE486A3429C59B710026A4D6 /* CloudSoundPlayer.entitlements */,
 				FE486A3529C59B710026A4D6 /* Preview Content */,
-				FE486A3D29C5A2460026A4D6 /* ContentView.swift */,
+				FE486A3D29C5A2460026A4D6 /* SongsView.swift */,
 				FE9AEF2329C5BB750009ABA1 /* CloudManager.swift */,
 				FE9AEF3129C8DB0A0009ABA1 /* CloudContainer.swift */,
+				FE52958929CD8710009E58B8 /* Player.swift */,
 			);
 			path = CloudSoundPlayer;
 			sourceTree = "<group>";
@@ -151,7 +154,8 @@
 			files = (
 				FE9AEF3229C8DB0B0009ABA1 /* CloudContainer.swift in Sources */,
 				FE9AEF2429C5BB750009ABA1 /* CloudManager.swift in Sources */,
-				FE486A3E29C5A2460026A4D6 /* ContentView.swift in Sources */,
+				FE486A3E29C5A2460026A4D6 /* SongsView.swift in Sources */,
+				FE52958A29CD8710009E58B8 /* Player.swift in Sources */,
 				FE486A2C29C59B6F0026A4D6 /* CloudSoundPlayerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

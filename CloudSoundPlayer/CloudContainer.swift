@@ -55,7 +55,6 @@ public class CloudContainer: NSObject, ObservableObject {
                 self?.handleUpdates()
             }
         )
-        
         NotificationCenter.default.addObserver(
             forName: .NSMetadataQueryDidStartGathering,
             object: query,
@@ -67,7 +66,6 @@ public class CloudContainer: NSObject, ObservableObject {
     }
     
     private func handleUpdates() {
-        print("Handle updates")
         query.disableUpdates()
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
@@ -76,6 +74,7 @@ public class CloudContainer: NSObject, ObservableObject {
                 (url as? URL).map { _ = urls.insert($0) }
             }
             DispatchQueue.main.async {
+                print("Apply Updates")
                 self.fileUrls = Array(urls).sorted(by: { $0.lastPathComponent > $1.lastPathComponent })
                 self.query.start()
             }

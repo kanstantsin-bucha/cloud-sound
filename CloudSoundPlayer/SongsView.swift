@@ -1,12 +1,13 @@
 import SwiftUI
 
-struct ContentView: View {
-    @ObservedObject var container: CloudContainer
-    private let manager: CloudManager
+struct SongsView: View {
+    @ObservedObject var cloud: CloudContainer
+    @State private var selected: URL?
+    private let player: Player
     
-    public init(manager: CloudManager) {
-        self.manager = manager
-        container = manager.container
+    public init(cloud: CloudContainer, player: Player) {
+        self.player = player
+        self.cloud = cloud
     }
     
     var body: some View {

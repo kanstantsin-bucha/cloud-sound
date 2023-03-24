@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct CloudSoundPlayerApp: App {
-    let cloudManager = CloudManager()
+    private let cloudManager: CloudManager
+    private let player: Player
+    
+    init() {
+        cloudManager = CloudManager()
+        player = Player(cloud: cloudManager)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(manager: cloudManager)
+            SongsView(cloud: cloudManager.cloud, player: player)
         }
     }
 }
