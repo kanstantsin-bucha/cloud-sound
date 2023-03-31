@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CloudSoundPlayerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     private let cloudManager: CloudManager
     private let player: Player
     
@@ -21,5 +22,16 @@ struct CloudSoundPlayerApp: App {
         WindowGroup {
             SongsView(cloud: cloudManager.cloud, player: player)
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+    ) -> Bool {
+        application.beginReceivingRemoteControlEvents()
+        return true
     }
 }

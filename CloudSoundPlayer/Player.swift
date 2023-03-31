@@ -1,5 +1,6 @@
 import Foundation
 import AVFAudio
+import MediaPlayer
 
 public class Player {
     enum Error: Swift.Error {
@@ -11,13 +12,19 @@ public class Player {
     public init(player: AVAudioPlayer? = nil, cloud: CloudManager) {
         self.player = player
         self.cloud = cloud
+        setupControls()
     }
     
-    func pause() {
-        player?.pause()
+    func play() {
+        guard let player else { return }
+        if player.isPlaying {
+            player.pause()
+            return
+        }
+        player.play()
     }
     
-    func play(_ fileURL: URL) {
+    func startPlaying(_ fileURL: URL) {
         Task {
             do {
                 try await play(file: fileURL)
@@ -52,8 +59,25 @@ public class Player {
             throw Error.fileIsNotLoadedFromCloud
         }
         player = try AVAudioPlayer(data: try Data(contentsOf: fileURL))
+        try AVAudioSession.sharedInstance().setCategory(.playback)
+        try AVAudioSession.sharedInstance().setActive(true)
         player?.prepareToPlay()
         player?.play()
+    }
+    
+    private func setupControls() {
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { [weak self] event in
+            self?.play()
+            return .success
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { [weak self] event in
+            self?.play()
+            return .success
+        }
     }
     
     private func forceLoading(file: URL) {

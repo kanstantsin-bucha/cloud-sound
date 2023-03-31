@@ -19,12 +19,10 @@ struct SongsView: View {
                     Text(url.lastPathComponent)
                 }
                 .onChange(of: selected) { newValue in
-                    play()
+                    newValue.map { player.startPlaying($0) }
                 }
                 HStack {
                     Button { play() } label: { Image(systemName: "play").font(.system(size: 40)) }
-                        .padding()
-                    Button { player.pause() } label: { Image(systemName: "pause").font(.system(size: 40)) }
                         .padding()
                 }
             }
@@ -32,7 +30,13 @@ struct SongsView: View {
     }
     
     private func play() {
-        guard let fileToPlay = selected ?? cloud.fileUrls.first else { return }
-        player.play(fileToPlay)
+        guard selected != nil else {
+            if let first = cloud.fileUrls.first {
+                player.startPlaying(first)
+                selected = first
+            }
+            return
+        }
+        player.play()
     }
 }
