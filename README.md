@@ -14,3 +14,11 @@ Vision: Player allows User to play files from iCloud Container folder
 - [ ] User pause playing
 - [ ] User see a list of files and playlists
 - [ ] User plays through playlist  
+
+
+# We are using fast-lane match here
+
+To get development profiles run
+```
+fastlane match development --readonly
+```
