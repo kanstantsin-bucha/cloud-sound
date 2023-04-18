@@ -1,0 +1,12 @@
+
+git_url("git@github.com:truebucha/ios-devs-match.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+team_id("J6252NJ42R")
+app_identifier(["com.kanstantsin-bucha.cloud.sound.player.CloudSoundPlayer1"])
+username("estbyright@icloud.com") # Your Apple Developer Portal username
+
+# For all available options run `fastlane match --help`
+# The docs are available on https://docs.fastlane.tools/actions/match
